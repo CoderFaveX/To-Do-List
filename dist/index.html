@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
+  <title>Frontend Mentor | Todo app</title>
+  <link rel="stylesheet" href="../Roboto_Condensed/RobotoCondensed-Light.ttf">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="../Josefin_Sans/JosefinSans-VariableFont_wght.ttf">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <script src="./js/jquery-3.1.1.js"></script>
+  <script src="./js/.js"></script>
+  <script src="./js/main.js"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main>
+    <div class="flex-head">
+        <div class="flex-todo">
+            <div class="flex-item"><h1>TODO</h1></div>
+            <div class="flex-item imgTrap"><img src="../images/icon-moon.svg" alt=""></div>
+        </div>
+          <div class="input-item">
+            <div class="circle-func" type="submit"></div>
+            <input type="text" name="list-txt" autofocus placeholder="Create a new todo..." value="">
+          </div>
+    </div>
+    <div class="recieve-todo">
+        <div class="todo-list">
+          <div class="appendDiv">
+            <div class="todo-item" draggable="true">
+              <div class="todo-check maintain"><img src="../images/icon-check.svg" alt=""></div>
+              <div class="todo-txt strike">Complete online JavaScript course</div>
+              <div class="todo-del"><img src="../images/icon-cross.svg" alt=""></div>
+            </div>
+            <div class="todo-item" draggable="true">
+              <div class="imgRem maintain"><img src="../images/icon-check.svg" alt=""></div>
+              <div class="todo-txt">Jog around the park 3x</div>
+              <div class="todo-del"><img src="../images/icon-cross.svg" alt=""></div>
+            </div>
+            <div class="todo-item" draggable="true">
+              <div class="imgRem maintain"><img src="../images/icon-check.svg" alt=""></div>
+              <div class="todo-txt">10 minutes meditation</div>
+              <div class="todo-del"><img src="../images/icon-cross.svg" alt=""></div>
+            </div>
+            <div class="todo-item" draggable="true">
+              <div class="imgRem maintain"><img src="../images/icon-check.svg" alt=""></div>
+              <div class="todo-txt">Read for 1 hour</div>
+              <div class="todo-del"><img src="../images/icon-cross.svg" alt=""></div>
+            </div>
+            <div class="todo-item" draggable="true">
+              <div class="imgRem maintain"><img src="../images/icon-check.svg" alt=""></div>
+              <div class="todo-txt">Pick up groceries</div>
+              <div class="todo-del"><img src="../images/icon-cross.svg" alt=""></div>
+            </div>
+            <div class="todo-item" draggable="true">
+              <div class="imgRem maintain"><img src="../images/icon-check.svg" alt=""></div>
+              <div class="todo-txt">Complete Todo App on Frontend Mentor</div>
+              <div class="todo-del"><img src="../images/icon-cross.svg" alt=""></div>
+            </div>
+          </div>
+          <div class="footer">
+            <div class="foot-item pointer"><span id="left">5</span> <span id="sing-plu">items</span> left</div>
+            <div class="foot-item links">
+              <a href="javascript:void(0)" class="active all">All</a>
+              <a href="javascript:void(0)" class="notComp">Active</a>
+              <a href="javascript:void(0)" class="comp">Completed</a>
+            </div>
+            <div class="foot-item pointer clear">Clear Completed</div>
+          </div>
+        </div>
+    </div>
+    <div class="to-top">&triangle;</div>
+  </main>
+</body>
+</html>

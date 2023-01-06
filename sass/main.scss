@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+@import 'variables';
+html, body {
+    font-family: 'Josefin Sans', sans-serif;
+    scroll-behavior: smooth;
+}
+.body-dark {background: $very-dark-blue;} 
+img {height: 100%; width: 100%;}
+.flex-head {
+    @include flex(column, center, center);
+    height: 40vh;
+    width: 100%;
+    padding: 2.2rem 0 0 0;
+    background: url(../../images/bg-desktop-light.jpg);
+    background-size: cover;
+    .flex-todo {
+        color: #fff;
+        @include flex(row, center, space-evenly);
+        width: calc(90% - 2rem);
+        @include media(1000px) {
+            width: 100%;
+            @include flex(row, center, space-around);
+        }
+        .flex-item h1 {
+            font-size: 35px;
+            letter-spacing: 10px;
+        }
+        .imgTrap {width: 30px; &:hover{cursor: pointer;}}
+    }
+    .input-item {
+        @include flex(row, center, center);
+        padding: 1rem;
+        background: #fff;
+        width: calc(40% - 2rem);
+        @include media(1000px) {
+            width: 90%;
+        }
+        border-radius: .3rem;
+        margin: 2.2rem 0;
+        .circle-func {
+            border: 1px solid $light-grayish-blue;
+            border-radius: 50%;
+            padding: .7rem;
+            cursor: pointer;
+            @include ease(.3s, all);
+            &:hover {border: 1px solid $dark-grayish-blue;}
+        }
+        input {
+            border: 0;
+            outline: 0;    
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: 17px;
+            padding: 0 1rem;
+            background: transparent;
+            font-weight: 400;
+            width: 100%;
+            color: $very-dark-grayish-blue;
+            &::placeholder {color: $dark-grayish-blue;}
+        }
+    }
+    .input-item-dark {
+        background: $very-dark-desaturated-blue;
+        input {color: $light-grayish-blue;}
+        .circle-func {border-color: $dark-grayish-blue; &:hover{border-color: $light-grayish-blue;}}
+    }
+}
+.flex-head-dark {background: url(../../images/bg-desktop-dark.jpg);}
+.recieve-todo {
+    @include flex(column, center, center);
+    width: 100%;
+    padding: 2.2rem 0 0 0;
+    transform: translateY(-3.5rem); 
+    @include media(1200px) {
+        padding-bottom: 50px;
+    }
+    .todo-list {
+        width: calc(40% - 2rem); 
+        background: #fff;
+        box-shadow: 0 10px 35px $light-grayish-blue;
+        border-radius: .5rem;
+        @include media(1000px) {
+            width: 90%;
+        }
+        .todo-item {
+            @include flex(row, center, center);
+            padding: 1rem;
+            background: #fff;
+            width: 100%;
+            border-bottom: 1px solid $very-light-grayish-blue;
+            border-radius: .3rem;
+        }
+        .todo-check {
+            background: linear-gradient(135deg, hsl(238, 42%, 87%), hsl(238, 55%, 81%), hsl(237, 47%, 71%));
+            padding: .5rem;
+            border-radius: 50%;
+            img {width: 15px;}
+            @include media(1200px) {
+                scale: .8;
+            }
+            cursor: pointer;
+        }
+        .imgRem {
+            background: #fff;
+            border: 1px solid $light-grayish-blue;
+            border-radius: 50%;
+            padding: 14px;
+            cursor: pointer;
+            @include media(1200px) {
+                scale: .8;
+            }
+            @include ease(.3s, border);
+            &:hover {border: 1px solid $dark-grayish-blue;}
+        }
+        .imgRem img {display: none;}
+        .todo-txt {
+            font-size: 17px;
+            padding: 0 1rem;
+            font-weight: 400;
+            @include ease(.4s, color);
+            width: 100%;
+            color: $very-dark-grayish-blue;
+            @include media(1180px) {
+                font-size: 14px;
+            }
+            @include media(400px) {
+                font-size: 12px;
+            }
+        }
+        .strike {text-decoration: line-through; color: $light-grayish-blue;}
+    }
+    .todo-list-dark {
+        background: $very-dark-desaturated-blue;
+        box-shadow: 0 10px 35px;
+        .todo-item {background: $very-dark-desaturated-blue; border-bottom-color: $very-dark-grayish-blue;}
+        .imgRem {background: transparent; border-color: $very-dark-grayish-blue; &:hover {border-color: $dark-grayish-blue}}
+        .todo-txt {color: rgb(174, 176, 201);}
+        .strike{color: $very-dark-grayish-blue;}
+        .footer {background: $very-dark-desaturated-blue;}
+    }
+}
+.footer {
+    @include flex(row, center, space-between);
+    font-size: 14px;
+    padding: 1rem;
+    color: $dark-grayish-blue !important;
+    background: #fff;
+    .pointer {cursor: pointer;}
+    a {text-decoration: none; color: $dark-grayish-blue; font-weight: 700; margin: 0 .3rem;}
+    .active {color: $very-dark-grayish-blue;}
+}
+.todo-del {
+    cursor: pointer;
+    padding: .0rem .5rem 0 0;
+    display: none;
+    @include ease(.4s, all);
+}
+.todo-item:hover .todo-del{display: initial;}
+.to-top {
+    background: rgb(186, 186, 245);
+    font-size: 40px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    color: #fff;
+    box-shadow: 0 0 20px $light-grayish-blue;
+    border-radius: 50%;
+    padding: .1rem .5rem;
+}
+.links {
+    background: #fff;
+    @include media(1200px) {
+        position: fixed;
+        bottom: 0;
+        text-align: center;
+        width: calc(40% - 2rem);
+        padding: 1rem 0;
+        border-radius: .3rem;
+        box-shadow: 0 10px 35px $light-grayish-blue;
+        transform: translate(-1rem, 50%);
+    }
+    @include media(800px) {
+        width: calc(100% - 4rem);
+    }
+}
+.links-dark {background: $very-dark-desaturated-blue; box-shadow: 0 10px 35px $very-dark-desaturated-blue;}
